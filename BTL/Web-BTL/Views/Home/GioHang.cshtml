@@ -1,0 +1,79 @@
+﻿@{
+    ViewData["Title"] = "GioHang";
+    Layout = "~/Views/Shared/LayoutGioHang.cshtml";
+}
+@model TDanhMucSp
+<!-- Product Details Section Begin -->
+<section class="product-details spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-md-6">
+                <div class="product__details__pic">
+                    <div class="product__details__pic__item">
+                        <img class="product__details__pic__item--large"
+                             src="@Url.Content("../Products-img/img/"+@Model.AnhDaiDien)" alt="">
+                    </div>
+                    <div class="product__details__pic__slider owl-carousel">
+                        @foreach (var image in ViewBag.anhSanPham)
+                        {
+
+                            <img data-imgbigurl="@Url.Content("../Products-img/img/"+image.TenFileAnh)"
+                                 src="@Url.Content("../Products-img/img/"+image.TenFileAnh)" alt="">
+
+                        }
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6">
+                <div class="product__details__text">
+                    <h3>@Model.TenSp</h3>
+                    <div class="product__details__rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-half-o"></i>
+                        <span>(18 reviews)</span>
+                    </div>
+                    <div class="product__details__price">@Model.GiaLonNhat</div>
+                    <p>
+                        @Model.GioiThieuSp
+                    </p>
+                    <div class="product__details__quantity">
+                        <div class="quantity">
+                            <div class="pro-qty">
+                                <input type="text" value="1">
+                            </div>
+                        </div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                    <div><a class="primary-btn">Thanh Toán</a></div>
+                   
+                </div>
+            </div>
+            <div class="col-lg-12">
+                <div class="product__details__tab">
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" data-toggle="tab" href="#tabs-1" role="tab"
+                            
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-toggle="tab" href="#tabs-2" role="tab"
+                               
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-toggle="tab" href="#tabs-3" role="tab"
+                               
+                        </li>
+                    </ul>
+                    <div class="tab-content">
+                     
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Product Details Section End -->
